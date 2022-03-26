@@ -6,9 +6,10 @@ import { Button } from '../../common/components/Button'
 export default function WeatherCheck() {
   const { user } = useUser()
   const [city, setcity] = useState('')
+  const [error, seterror] = useState({ status: false, message: '' })
 
   function getWeather() {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + process.env.NEXT_PUBLIC_OPEN_WEATHER_KEY)
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=' + process.env.NEXT_PUBLIC_OPEN_WEATHER_KEY)
       .then(res => res.json())
       .then(data => {
         Router.push({
@@ -23,7 +24,9 @@ export default function WeatherCheck() {
           }
         })
       })
-      .catch(error => console.error('Error:', error))
+      .catch(err => {
+        seterror({ status: true, message: 'City not found!' })
+      })
   }
 
   return (
@@ -44,7 +47,8 @@ export default function WeatherCheck() {
               <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><path fill="currentColor" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0z"/></svg>
             </div>
           </div>
-          <Button onClick={() => getWeather()}> Display Weather </Button>
+          { error.status && <span className='text-red-600'>{error.message}</span> }
+          <Button onClick={() => city && getWeather()} disabled={ city ? false : true }> Display Weather </Button>
         </div>
       </div>
     </div>

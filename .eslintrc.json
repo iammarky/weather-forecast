@@ -3,6 +3,6 @@
   "rules": {
     // Other rules
     "@next/next/no-img-element": "off",
-    "quotes": [2, "single", { "avoidEscape": true }]
+    "quotes": [2, "single", { "avoidEscape": true }, "error", "backtick"]
   }
 }
