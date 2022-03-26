@@ -1,6 +1,6 @@
 import Head from 'next/head'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import { Header } from '../common/components/Header'
-import Login from '../common/components/Login/Login'
 import { WeatherCheck, WeatherResult } from '../modules/weather'
 
 export default function Home() {
@@ -15,3 +15,5 @@ export default function Home() {
     </div>
   )
 }
+
+export const getServerSideProps = withPageAuthRequired()
