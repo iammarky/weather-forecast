@@ -1,5 +1,5 @@
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
-import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import { Header } from '../common/components/Header'
 import { WeatherCheck, WeatherResult } from '../modules/weather'
 
@@ -10,10 +10,8 @@ export default function Home() {
         <title>Weather Forecast</title>
       </Head>
       <Header />
-      <WeatherCheck />
-      <WeatherResult />
+      <WeatherCheck /> 
+      <WeatherResult /> 
     </div>
   )
 }
-
-export const getServerSideProps = withPageAuthRequired()

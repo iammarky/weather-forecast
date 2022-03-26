@@ -1,7 +1,8 @@
 import React from 'react'
+import Router from 'next/router'
 import { Button } from '../../common/components/Button'
 
-export default function WeatherResult() {
+export default function WeatherResult( { date, description, humidity, main, pressure, temperature } ) {
   return (
     <div className='flex h-full w-full pt-10'>
       <div className='mx-auto w-full flex flex-col px-4 sm:w-auto'>
@@ -18,17 +19,21 @@ export default function WeatherResult() {
           </thead>
           <tbody>
             <tr>
-              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> 09/01/2020 </td>
-              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> 75 </td>
-              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> Sky is clear </td>
-              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> Clear </td>
-              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> 1023.68 </td>
-              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> 100 </td>
+              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> { date } </td>
+              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> { temperature } </td>
+              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> { description } </td>
+              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> { main } </td>
+              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> { pressure } </td>
+              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> { humidity } </td>
             </tr>
           </tbody>
         </table>
         <div className='pt-12 flex-col flex justify-end items-end space-y-4'>
-          <Button> Back </Button>
+          <Button onClick={() => {
+            Router.push({
+              pathname: '/weather/search',
+            })
+          }}> Back </Button>
         </div> 
       </div>
     </div>
