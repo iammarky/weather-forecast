@@ -1,6 +1,7 @@
 import React from 'react'
 import Router from 'next/router'
 import { Button } from '../../common/components/Button'
+import { convertDateMMDDYYYY } from '../../common/mixins/time'
 
 export default function WeatherResult( { date, description, humidity, main, pressure, temperature } ) {
   return (
@@ -19,7 +20,7 @@ export default function WeatherResult( { date, description, humidity, main, pres
           </thead>
           <tbody>
             <tr>
-              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> { date } </td>
+              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> { convertDateMMDDYYYY(date) } </td>
               <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> { temperature } </td>
               <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> { description } </td>
               <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> { main } </td>
