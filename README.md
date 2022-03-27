@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather Forecast
+
+A simple weather forecast application built using ReactJS(NextJS), Tailwind CSS 3, 
+OpenWeatherMap API and Auth0.
 
 ## Getting Started
 
-First, run the development server:
-
+Install all dependencies
 ```bash
-npm run dev
-# or
-yarn dev
+  npm install
+```
+Create .env.local in the root directory
+
+Create an account in https://openweathermap.org/ and https://auth0.com/
+
+Run the development server:
+```bash
+  npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## VSCode Setup
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+If you're using VSCode, we recommend these extensions: 
+- Auto Rename Tag, 
+- Eslint
+- Javascript
+- Prettier
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Environment Variables
 
-## Learn More
+To run this project, you will need to add the following environment variables to your .env.local file
 
-To learn more about Next.js, take a look at the following resources:
+- `AUTH0_SECRET` - A long, secret value used to encrypt the session cookie
+- `AUTH0_BASE_URL` - The base url of your application
+- `AUTH0_ISSUER_BASE_URL` - The url of your Auth0 tenant domain
+- `AUTH0_CLIENT_ID` - Your Auth0 application's Client ID
+- `AUTH0_CLIENT_SECRET` - Your Auth0 application's Client Secret
+- `NEXT_PUBLIC_OPEN_WEATHER_KEY` - Open weather API key
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `public` - Contains static files, like images.
+- `src/common` - This folder consists of common code that can be use across the application.
+- `src/common/components` - Contains all reusable components
+- `src/common/hooks` - Contains all hooks
+- `src/common/mixins` - Contains all functions that can be used accross the application
+- `src/common/styles` - Contains the global css styles
+- `src/module` - Logical groupings of code that make up the larger pages.
+- `src/pages` - Used for pages layout (required for Next.js)
 
-## Deploy on Vercel
+## Commands
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `npm run dev` - start the development server
+- `npm run build` - build your application
+- `npm run start` - start the prodoction server with the latest build
+- `npm run lint` - run lint checking for all modules
+- `npm run lint:fix` - fix all linting errors for all modules
+- `npm run prettify` - run to format your code

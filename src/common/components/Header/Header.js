@@ -1,7 +1,7 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import { useUser } from '@auth0/nextjs-auth0'
-import { Button } from '../Button'
+import React from "react"
+import { useRouter } from "next/router"
+import { useUser } from "@auth0/nextjs-auth0"
+import { Button } from "../Button"
 
 export default function Header() {
   const router = useRouter()
@@ -9,7 +9,7 @@ export default function Header() {
 
   // the logout api will be invoked and the user will be logged out
   const handleLogout = async () => {
-    router.push('/api/auth/logout')
+    router.push("/api/auth/logout")
   }
 
   return (
@@ -18,10 +18,8 @@ export default function Header() {
         <img className="h-full py-4" src="/logo.png" alt="logo" />
         <h1 className="m-auto text-2xl font-bold"> Weather Forecast </h1>
       </div>
-      <div className='flex justify-center items-center'>
-        { user && (
-          <Button onClick={() => handleLogout()}> Logout </Button>
-        )}
+      <div className="flex items-center justify-center">
+        {user && <Button onClick={() => handleLogout()}> Logout </Button>}
       </div>
     </div>
   )
