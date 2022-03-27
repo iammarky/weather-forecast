@@ -11,7 +11,7 @@ export default function WeatherResult( { date, description, humidity, main, pres
           <thead className='bg-gray-100 border-b'>
             <tr>
               <th className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> Date (mm/dd/yyyy) </th>
-              <th className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> Temp(F) </th>
+              <th className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> Temp (F) </th>
               <th className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> Description </th>
               <th className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> Main </th>
               <th className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> Pressure </th>
@@ -22,7 +22,7 @@ export default function WeatherResult( { date, description, humidity, main, pres
             <tr>
               <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> { convertDateMMDDYYYY(date) } </td>
               <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600'> { temperature } </td>
-              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> { description } </td>
+              <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell first-letter:uppercase'> { description } </td>
               <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> { main } </td>
               <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> { pressure } </td>
               <td className='pr-6 pl-2 py-2 font-medium text-gray-900 whitespace-nowrap border-l-2 border-slate-600 hidden sm:table-cell'> { humidity } </td>

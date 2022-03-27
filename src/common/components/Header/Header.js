@@ -8,7 +8,7 @@ export default function Header() {
   const { user } = useUser()
 
   // the logout api will be invoked and the user will be logged out
-  const handleLogout = e => {
+  const handleLogout = async () => {
     router.push('/api/auth/logout')
   }
 
