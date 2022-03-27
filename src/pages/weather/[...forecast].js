@@ -6,8 +6,7 @@ import { Header } from "../../common/components/Header"
 import { WeatherCheck, WeatherResult } from "../../modules/weather"
 
 export default function Forecast(props) {
-  const { date, description, forecast, humidity, main, pressure, temperature } =
-    props
+  const { date, description, forecast, humidity, main, pressure, temperature } = props
   const { user } = useUser()
 
   useEffect(() => {

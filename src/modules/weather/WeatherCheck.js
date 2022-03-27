@@ -39,8 +39,7 @@ export default function WeatherCheck() {
       <div className="mx-auto flex flex-col space-y-2">
         <h1 className="mx-auto text-lg font-bold"> {user && user.name} </h1>
         <span className="mx-auto">
-          {" "}
-          {user && "https://github.com/" + user.nickname}{" "}
+          {user && "https://github.com/" + user.nickname}
         </span>
         <div className="flex flex-col items-center justify-center space-y-4 pt-12">
           <div className="relative">
@@ -76,8 +75,7 @@ export default function WeatherCheck() {
             onClick={() => city && getWeather()}
             disabled={city ? false : true}
           >
-            {" "}
-            Display Weather{" "}
+            Display Weather
           </Button>
         </div>
       </div>

@@ -17,58 +17,22 @@ export default function WeatherResult({
         <table className="border-collapse border-4 border-slate-500 text-left">
           <thead className="border-b bg-gray-100">
             <tr>
-              <th className="whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900">
-                {" "}
-                Date (mm/dd/yyyy){" "}
-              </th>
-              <th className="whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900">
-                {" "}
-                Temp (F){" "}
-              </th>
-              <th className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell">
-                {" "}
-                Description{" "}
-              </th>
-              <th className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell">
-                {" "}
-                Main{" "}
-              </th>
-              <th className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell">
-                {" "}
-                Pressure{" "}
-              </th>
-              <th className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell">
-                {" "}
-                Humidity{" "}
-              </th>
+              <th className="whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900"> Date (mm/dd/yyyy) </th>
+              <th className="whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900"> Temp (F) </th>
+              <th className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell"> Description </th>
+              <th className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell"> Main </th>
+              <th className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell"> Pressure </th>
+              <th className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell"> Humidity </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900">
-                {" "}
-                {convertDateMMDDYYYY(date)}{" "}
-              </td>
-              <td className="whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900">
-                {" "}
-                {temperature}{" "}
-              </td>
-              <td className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 first-letter:uppercase sm:table-cell">
-                {" "}
-                {description}{" "}
-              </td>
-              <td className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell">
-                {" "}
-                {main}{" "}
-              </td>
-              <td className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell">
-                {" "}
-                {pressure}{" "}
-              </td>
-              <td className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell">
-                {" "}
-                {humidity}{" "}
-              </td>
+              <td className="whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900"> {convertDateMMDDYYYY(date)} </td>
+              <td className="whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900"> {temperature} </td>
+              <td className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 first-letter:uppercase sm:table-cell"> {description} </td>
+              <td className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell"> {main} </td>
+              <td className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell"> {pressure} </td>
+              <td className="hidden whitespace-nowrap border-l-2 border-slate-600 py-2 pr-6 pl-2 font-medium text-gray-900 sm:table-cell"> {humidity} </td>
             </tr>
           </tbody>
         </table>
@@ -80,8 +44,7 @@ export default function WeatherResult({
               })
             }}
           >
-            {" "}
-            Back{" "}
+            Back
           </Button>
         </div>
       </div>
